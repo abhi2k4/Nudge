@@ -12,9 +12,10 @@ graph TD
     B --> C[Processing Queue (WorkManager)]
 
     subgraph AI_Pipeline[AI Pipeline]
-        C --> D[Pre-processing (ASR/OCR)]
-        D --> E[Intent Extraction (On-device LLM)]
-        E --> F[Context Resolution (Embeddings)]
+        D[Pre-processing (ASR/OCR)]
+        E[Intent Extraction (On-device LLM)]
+        F[Context Resolution (Embeddings)]
+        C --> D --> E --> F
     end
 
     F --> G[Action Engine]
