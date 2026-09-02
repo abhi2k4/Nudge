@@ -84,8 +84,16 @@ fun AppNavGraph() {
             navController = navController,
             startDestination = NudgeDestination.Home.route,
         ) {
-            composable(NudgeDestination.Home.route) { HomeScreen() }
-            composable(NudgeDestination.Capture.route) { CaptureScreen() }
+            composable(NudgeDestination.Home.route) { 
+                HomeScreen(onNavigateToCapture = {
+                    navController.navigate(NudgeDestination.Capture.route)
+                }) 
+            }
+            composable(NudgeDestination.Capture.route) { 
+                CaptureScreen(onNavigateBack = {
+                    navController.popBackStack()
+                }) 
+            }
             composable(NudgeDestination.Memory.route) { MemoryScreen() }
             composable(NudgeDestination.Contexts.route) { ContextsScreen() }
             composable(NudgeDestination.Tasks.route) { TasksScreen() }

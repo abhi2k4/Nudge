@@ -65,6 +65,7 @@ dependencies {
     // ── Local modules ──────────────────────────────────────────
     implementation(project(":core:common"))
     implementation(project(":core:model"))
+    implementation(project(":core:designsystem"))
     implementation(project(":core:database"))
     implementation(project(":core:datastore"))
     implementation(project(":core:filesystem"))

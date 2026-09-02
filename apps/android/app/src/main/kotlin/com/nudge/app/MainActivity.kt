@@ -5,7 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.nudge.app.navigation.AppNavGraph
-import com.nudge.app.ui.theme.NudgeTheme
+import com.nudge.core.designsystem.theme.NudgeTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 /**
