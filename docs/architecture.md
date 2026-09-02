@@ -10,19 +10,19 @@ The journey of a capture through the system:
 graph TD
     A[Capture UI] --> B[Local Store (Room)]
     B --> C[Processing Queue (WorkManager)]
-    
-    subgraph AI Pipeline
+
+    subgraph AI_Pipeline[AI Pipeline]
         C --> D[Pre-processing (ASR/OCR)]
         D --> E[Intent Extraction (On-device LLM)]
         E --> F[Context Resolution (Embeddings)]
     end
-    
+
     F --> G[Action Engine]
     F --> H[Nudge Engine]
-    
+
     G --> I[Task / Calendar UI]
     H --> J[Proactive Notifications]
-    
+
     B -.-> K[Optional Cloud Sync (Supabase)]
 ```
 
@@ -37,4 +37,4 @@ graph TD
 
 ## Cloud Escalation (Optional)
 
-Cloud processing sits beside the local AI layer and is strictly opt-in. The `AIOrchestrator` determines whether a workload can be handled locally or needs cloud escalation (e.g., for very complex reasoning tasks), provided the user has granted consent.
+Cloud processing sits beside the local AI layer and is strictly opt-in. The `AIOrchestrator` determines whether a workload can be handled locally or needs cloud escalation (e.g., for very complex reasoning).
